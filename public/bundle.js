@@ -26620,14 +26620,12 @@
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
 
 	var React = __webpack_require__(8);
+	var ReactDOM = __webpack_require__(165);
+	var ReactServer = __webpack_require__(263);
 
 	var ErrorModal = React.createClass({
 	  displayName: 'ErrorModal',
 
-	  componentDidMount: function componentDidMount() {
-	    var modal = new Foundation.Reveal($('#error-modal'));
-	    modal.open();
-	  },
 	  getDefaultProps: function getDefaultProps() {
 	    return {
 	      title: "Uhooh, here's trouble."
@@ -26637,13 +26635,13 @@
 	    title: React.PropTypes.string,
 	    message: React.PropTypes.string.isRequired
 	  },
-	  render: function render() {
+	  componentDidMount: function componentDidMount() {
 	    var _props = this.props,
 	        message = _props.message,
 	        title = _props.title;
 
 
-	    return React.createElement(
+	    var modalMarkup = React.createElement(
 	      'div',
 	      { id: 'error-modal', className: 'reveal text-center', 'data-reveal': '' },
 	      React.createElement(
@@ -26662,6 +26660,20 @@
 	        'OK'
 	      )
 	    );
+
+	    var $modal = $(ReactServer.renderToString(modalMarkup));
+	    $(ReactDOM.findDOMNode(this)).html($modal);
+
+	    var modal = new Foundation.Reveal($('#error-modal'));
+	    modal.open();
+	  },
+	  render: function render() {
+	    var _props2 = this.props,
+	        message = _props2.message,
+	        title = _props2.title;
+
+
+	    return React.createElement('div', null);
 	  }
 	});
 
@@ -27240,6 +27252,15 @@
 	});
 
 		module.exports = Nav;
+
+/***/ },
+/* 263 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	module.exports = __webpack_require__(155);
+
 
 /***/ }
 /******/ ]);
