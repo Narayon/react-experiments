@@ -2,9 +2,10 @@ var express = require('express');
 
 // create app
 var app = express();
+const PORT = process.env.PORT || 2112;
 
 app.use(express.static('public'));
 
-app.listen(2112, function () {
-  console.log('Express is listening on :2112');
+app.listen(PORT, function () {
+  console.log('Express is listening on' + PORT);
 });
