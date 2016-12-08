@@ -2,7 +2,13 @@ var React = require('react');
 
 var About = (props) => {
   return (
-    <h3>About Component</h3>
+        <div>
+      <h1 className="text-center">About</h1>
+      <p>
+        But there's something about us I want to say
+        Cause there's something between us anyway
+      </p>
+    </div>
   );
 }
 
