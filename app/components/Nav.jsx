@@ -1,8 +1,8 @@
 var React = require('react');
 var {Link, IndexLink} = require('react-router');
 
-var Nav = React.createClass({
-  onSearch: function(e) {
+class Nav extends React.Component{
+  onSearch(e) {
     e.preventDefault();
 
     var location = this.refs.location.value;
@@ -12,8 +12,8 @@ var Nav = React.createClass({
       this.refs.location.value = '';
       window.location.hash = '#/?location=' + encodedLocation;
     }
-  },
-  render: function() {
+  }
+  render() {
     return (
       <div className="top-bar">
         <div className="top-bar-left">
@@ -25,7 +25,7 @@ var Nav = React.createClass({
           </ul>
         </div>
         <div className="top-bar-right">
-          <form onSubmit={this.onSearch}>
+          <form onSubmit={this.onSearch.bind(this)}>
             <ul className="menu">
               <li><input type="search" placeholder="Search weather by city" ref="location"/></li>
               <li><button className="button" type="submit">Get weather</button></li>
@@ -35,6 +35,6 @@ var Nav = React.createClass({
       </div>
     );
   }
-});
+};
 
 module.exports = Nav;

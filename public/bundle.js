@@ -24938,101 +24938,124 @@
 
 	'use strict';
 
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 	var React = __webpack_require__(8);
 
 	var _require = __webpack_require__(166),
 	    Link = _require.Link,
 	    IndexLink = _require.IndexLink;
 
-	var Nav = React.createClass({
-	  displayName: 'Nav',
+	var Nav = function (_React$Component) {
+	  _inherits(Nav, _React$Component);
 
-	  onSearch: function onSearch(e) {
-	    e.preventDefault();
+	  function Nav() {
+	    _classCallCheck(this, Nav);
 
-	    var location = this.refs.location.value;
-	    var encodedLocation = encodeURIComponent(location);
+	    return _possibleConstructorReturn(this, (Nav.__proto__ || Object.getPrototypeOf(Nav)).apply(this, arguments));
+	  }
 
-	    if (encodedLocation.length > 0) {
-	      this.refs.location.value = '';
-	      window.location.hash = '#/?location=' + encodedLocation;
+	  _createClass(Nav, [{
+	    key: 'onSearch',
+	    value: function onSearch(e) {
+	      e.preventDefault();
+
+	      var location = this.refs.location.value;
+	      var encodedLocation = encodeURIComponent(location);
+
+	      if (encodedLocation.length > 0) {
+	        this.refs.location.value = '';
+	        window.location.hash = '#/?location=' + encodedLocation;
+	      }
 	    }
-	  },
-	  render: function render() {
-	    return React.createElement(
-	      'div',
-	      { className: 'top-bar' },
-	      React.createElement(
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return React.createElement(
 	        'div',
-	        { className: 'top-bar-left' },
+	        { className: 'top-bar' },
 	        React.createElement(
-	          'ul',
-	          { className: 'menu' },
-	          React.createElement(
-	            'li',
-	            { className: 'menu-text' },
-	            'React Weather App'
-	          ),
-	          React.createElement(
-	            'li',
-	            null,
-	            React.createElement(
-	              IndexLink,
-	              { activeClassName: 'active', to: '/' },
-	              'Get Weather'
-	            )
-	          ),
-	          React.createElement(
-	            'li',
-	            null,
-	            React.createElement(
-	              Link,
-	              { activeClassName: 'active', to: '/about' },
-	              'About'
-	            )
-	          ),
-	          React.createElement(
-	            'li',
-	            null,
-	            React.createElement(
-	              Link,
-	              { activeClassName: 'active', to: '/examples' },
-	              'Examples'
-	            )
-	          )
-	        )
-	      ),
-	      React.createElement(
-	        'div',
-	        { className: 'top-bar-right' },
-	        React.createElement(
-	          'form',
-	          { onSubmit: this.onSearch },
+	          'div',
+	          { className: 'top-bar-left' },
 	          React.createElement(
 	            'ul',
 	            { className: 'menu' },
 	            React.createElement(
 	              'li',
-	              null,
-	              React.createElement('input', { type: 'search', placeholder: 'Search weather by city', ref: 'location' })
+	              { className: 'menu-text' },
+	              'React Weather App'
 	            ),
 	            React.createElement(
 	              'li',
 	              null,
 	              React.createElement(
-	                'button',
-	                { className: 'button', type: 'submit' },
-	                'Get weather'
+	                IndexLink,
+	                { activeClassName: 'active', to: '/' },
+	                'Get Weather'
+	              )
+	            ),
+	            React.createElement(
+	              'li',
+	              null,
+	              React.createElement(
+	                Link,
+	                { activeClassName: 'active', to: '/about' },
+	                'About'
+	              )
+	            ),
+	            React.createElement(
+	              'li',
+	              null,
+	              React.createElement(
+	                Link,
+	                { activeClassName: 'active', to: '/examples' },
+	                'Examples'
+	              )
+	            )
+	          )
+	        ),
+	        React.createElement(
+	          'div',
+	          { className: 'top-bar-right' },
+	          React.createElement(
+	            'form',
+	            { onSubmit: this.onSearch.bind(this) },
+	            React.createElement(
+	              'ul',
+	              { className: 'menu' },
+	              React.createElement(
+	                'li',
+	                null,
+	                React.createElement('input', { type: 'search', placeholder: 'Search weather by city', ref: 'location' })
+	              ),
+	              React.createElement(
+	                'li',
+	                null,
+	                React.createElement(
+	                  'button',
+	                  { className: 'button', type: 'submit' },
+	                  'Get weather'
+	                )
 	              )
 	            )
 	          )
 	        )
-	      )
-	    );
-	  }
-	});
+	      );
+	    }
+	  }]);
 
-		module.exports = Nav;
+	  return Nav;
+	}(React.Component);
+
+	;
+
+	module.exports = Nav;
 
 /***/ },
 /* 225 */
@@ -25040,101 +25063,130 @@
 
 	'use strict';
 
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 	var React = __webpack_require__(8);
 	var WeatherForm = __webpack_require__(226);
 	var WeatherMessage = __webpack_require__(227);
 	var openWeatherMap = __webpack_require__(228);
 	var ErrorModal = __webpack_require__(254);
 
-	var Weather = React.createClass({
-	  displayName: 'Weather',
+	var Weather = function (_React$Component) {
+	  _inherits(Weather, _React$Component);
 
-	  getInitialState: function getInitialState() {
-	    return {
+	  function Weather() {
+	    _classCallCheck(this, Weather);
+
+	    var _this = _possibleConstructorReturn(this, (Weather.__proto__ || Object.getPrototypeOf(Weather)).call(this));
+
+	    _this.state = {
 	      isLoading: false
 	    };
-	  },
-	  handleSearch: function handleSearch(location) {
-	    var _this = this;
 
-	    this.setState({
-	      isLoading: true,
-	      errorMessage: undefined,
-	      location: undefined,
-	      temp: undefined
-	    });
-
-	    openWeatherMap.getTemp(location).then(function (temp) {
-	      _this.setState({
-	        location: location,
-	        temp: parseInt(temp),
-	        isLoading: false
-	      });
-	    }).catch(function (err) {
-	      _this.setState({
-	        isLoading: false,
-	        errorMessage: err.message
-	      });
-	    });
-	  },
-	  componentDidMount: function componentDidMount() {
-	    var location = this.props.location.query.location;
-
-	    if (location && location.length > 0) {
-	      this.handleSearch(location);
-	      window.location.hash = '#/';
-	    }
-	  },
-	  componentWillReceiveProps: function componentWillReceiveProps(newProps) {
-	    var location = newProps.location.query.location;
-
-	    if (location && location.length > 0) {
-	      this.handleSearch(location);
-	      window.location.hash = '#/';
-	    }
-	  },
-	  render: function render() {
-	    var _state = this.state,
-	        temp = _state.temp,
-	        location = _state.location,
-	        isLoading = _state.isLoading,
-	        errorMessage = _state.errorMessage;
-
-
-	    function renderMessage() {
-	      if (isLoading) {
-	        return React.createElement(
-	          'h3',
-	          { className: 'text-center' },
-	          'Fetching from the API'
-	        );
-	      } else if (location && temp) {
-	        return React.createElement(WeatherMessage, { location: location, temp: temp });
-	      }
-	    }
-
-	    function renderError() {
-	      if (typeof errorMessage == 'string') {
-	        return React.createElement(ErrorModal, { message: errorMessage });
-	      }
-	    }
-
-	    return React.createElement(
-	      'div',
-	      null,
-	      React.createElement(
-	        'h1',
-	        { className: 'text-center' },
-	        'Get Weather'
-	      ),
-	      React.createElement(WeatherForm, { onSearch: this.handleSearch }),
-	      renderMessage(),
-	      renderError()
-	    );
+	    _this.handleSearch = _this.handleSearch.bind(_this);
+	    return _this;
 	  }
-	});
 
-		module.exports = Weather;
+	  _createClass(Weather, [{
+	    key: 'handleSearch',
+	    value: function handleSearch(location) {
+	      var _this2 = this;
+
+	      this.setState({
+	        isLoading: true,
+	        errorMessage: undefined,
+	        location: undefined,
+	        temp: undefined
+	      });
+
+	      openWeatherMap.getTemp(location).then(function (temp) {
+	        _this2.setState({
+	          location: location,
+	          temp: parseInt(temp),
+	          isLoading: false
+	        });
+	      }).catch(function (err) {
+	        _this2.setState({
+	          isLoading: false,
+	          errorMessage: err.message
+	        });
+	      });
+	    }
+	  }, {
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      var location = this.props.location.query.location;
+
+	      if (location && location.length > 0) {
+	        this.handleSearch(location);
+	        window.location.hash = '#/';
+	      }
+	    }
+	  }, {
+	    key: 'componentWillReceiveProps',
+	    value: function componentWillReceiveProps(newProps) {
+	      var location = newProps.location.query.location;
+
+	      if (location && location.length > 0) {
+	        this.handleSearch(location);
+	        window.location.hash = '#/';
+	      }
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _state = this.state,
+	          temp = _state.temp,
+	          location = _state.location,
+	          isLoading = _state.isLoading,
+	          errorMessage = _state.errorMessage;
+
+
+	      function renderMessage() {
+	        if (isLoading) {
+	          return React.createElement(
+	            'h3',
+	            { className: 'text-center' },
+	            'Fetching from the API'
+	          );
+	        } else if (location && temp) {
+	          return React.createElement(WeatherMessage, { location: location, temp: temp });
+	        }
+	      }
+
+	      function renderError() {
+	        if (typeof errorMessage == 'string') {
+	          return React.createElement(ErrorModal, { message: errorMessage });
+	        }
+	      }
+
+	      return React.createElement(
+	        'div',
+	        null,
+	        React.createElement(
+	          'h1',
+	          { className: 'text-center' },
+	          'Get Weather'
+	        ),
+	        React.createElement(WeatherForm, { onSearch: this.handleSearch }),
+	        renderMessage(),
+	        renderError()
+	      );
+	    }
+	  }]);
+
+	  return Weather;
+	}(React.Component);
+
+	;
+
+	module.exports = Weather;
 
 /***/ },
 /* 226 */
@@ -25142,36 +25194,59 @@
 
 	'use strict';
 
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 	var React = __webpack_require__(8);
 
-	var WeatherForm = React.createClass({
-	  displayName: 'WeatherForm',
+	var WeatherForm = function (_React$Component) {
+	  _inherits(WeatherForm, _React$Component);
 
-	  onFormSubmit: function onFormSubmit(e) {
-	    e.preventDefault();
+	  function WeatherForm() {
+	    _classCallCheck(this, WeatherForm);
 
-	    var location = this.refs.location.value;
-
-	    if (location.length > 0) {
-	      this.refs.location.value = '';
-	      this.props.onSearch(location);
-	    }
-	  },
-	  render: function render() {
-	    return React.createElement(
-	      'form',
-	      { onSubmit: this.onFormSubmit },
-	      React.createElement('input', { type: 'search', name: 'city', ref: 'location', placeholder: 'Search weather by city' }),
-	      React.createElement(
-	        'button',
-	        { className: 'button expanded hollow', type: 'submit' },
-	        'Get the Weather'
-	      )
-	    );
+	    return _possibleConstructorReturn(this, (WeatherForm.__proto__ || Object.getPrototypeOf(WeatherForm)).apply(this, arguments));
 	  }
-	});
 
-		module.exports = WeatherForm;
+	  _createClass(WeatherForm, [{
+	    key: 'onFormSubmit',
+	    value: function onFormSubmit(e) {
+	      e.preventDefault();
+
+	      var location = this.refs.location.value;
+
+	      if (location.length > 0) {
+	        this.refs.location.value = '';
+	        this.props.onSearch(location);
+	      }
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return React.createElement(
+	        'form',
+	        { onSubmit: this.onFormSubmit.bind(this) },
+	        React.createElement('input', { type: 'search', name: 'city', ref: 'location', placeholder: 'Search weather by city' }),
+	        React.createElement(
+	          'button',
+	          { className: 'button expanded hollow', type: 'submit' },
+	          'Get the Weather'
+	        )
+	      );
+	    }
+	  }]);
+
+	  return WeatherForm;
+	}(React.Component);
+
+	;
+
+	module.exports = WeatherForm;
 
 /***/ },
 /* 227 */
@@ -26721,63 +26796,86 @@
 
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
 
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 	var React = __webpack_require__(8);
 	var ReactDOM = __webpack_require__(165);
 	var ReactServer = __webpack_require__(255);
 
-	var ErrorModal = React.createClass({
-	  displayName: 'ErrorModal',
+	var ErrorModal = function (_React$Component) {
+	  _inherits(ErrorModal, _React$Component);
 
-	  getDefaultProps: function getDefaultProps() {
-	    return {
-	      title: "Uhooh, here's trouble."
-	    };
-	  },
-	  propTypes: {
-	    title: React.PropTypes.string,
-	    message: React.PropTypes.string.isRequired
-	  },
-	  componentDidMount: function componentDidMount() {
-	    var _props = this.props,
-	        message = _props.message,
-	        title = _props.title;
+	  function ErrorModal() {
+	    _classCallCheck(this, ErrorModal);
 
-
-	    var modalMarkup = React.createElement(
-	      'div',
-	      { id: 'error-modal', className: 'reveal text-center', 'data-reveal': '' },
-	      React.createElement(
-	        'h3',
-	        null,
-	        title
-	      ),
-	      React.createElement(
-	        'p',
-	        null,
-	        message
-	      ),
-	      React.createElement(
-	        'button',
-	        { className: 'button hollow', 'data-close': '' },
-	        'OK'
-	      )
-	    );
-
-	    var $modal = $(ReactServer.renderToString(modalMarkup));
-	    $(ReactDOM.findDOMNode(this)).html($modal);
-
-	    var modal = new Foundation.Reveal($('#error-modal'));
-	    modal.open();
-	  },
-	  render: function render() {
-	    var _props2 = this.props,
-	        message = _props2.message,
-	        title = _props2.title;
-
-
-	    return React.createElement('div', null);
+	    return _possibleConstructorReturn(this, (ErrorModal.__proto__ || Object.getPrototypeOf(ErrorModal)).apply(this, arguments));
 	  }
-	});
+
+	  _createClass(ErrorModal, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      var _props = this.props,
+	          message = _props.message,
+	          title = _props.title;
+
+
+	      var modalMarkup = React.createElement(
+	        'div',
+	        { id: 'error-modal', className: 'reveal text-center', 'data-reveal': '' },
+	        React.createElement(
+	          'h3',
+	          null,
+	          title
+	        ),
+	        React.createElement(
+	          'p',
+	          null,
+	          message
+	        ),
+	        React.createElement(
+	          'button',
+	          { className: 'button hollow', 'data-close': '' },
+	          'OK'
+	        )
+	      );
+
+	      var $modal = $(ReactServer.renderToString(modalMarkup));
+	      $(ReactDOM.findDOMNode(this)).html($modal);
+
+	      var modal = new Foundation.Reveal($('#error-modal'));
+	      modal.open();
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _props2 = this.props,
+	          message = _props2.message,
+	          title = _props2.title;
+
+
+	      return React.createElement('div', null);
+	    }
+	  }]);
+
+	  return ErrorModal;
+	}(React.Component);
+
+	;
+
+	ErrorModal.propTypes = {
+	  title: React.PropTypes.string,
+	  message: React.PropTypes.string.isRequired
+	};
+
+	ErrorModal.defaultProps = {
+	  title: "Uhooh, here's trouble."
+	};
 
 		module.exports = ErrorModal;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
